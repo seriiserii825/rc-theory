@@ -1,26 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import Timer from './components/Timer';
-// import { Counter } from './components/Counter';
-// import { UseRef } from './components/UseRef';
+import { Context } from './hooks/Context';
+import { Books } from './components/books/Books';
 
 function App() {
-	// const [counterIsVisible, setCounterIsVisible] = useState(false);
-	// const toggleCounter = () => setCounterIsVisible(!counterIsVisible);
-	const [toggleTimer, setToggleTimer] = useState(false);
 	return (
 		<div className='App'>
-			{/* <button onClick={toggleCounter}>Toggle Counter</button>
-			<hr />
-			{counterIsVisible && <Counter />}
-			<hr />
-			<h3>User Ref</h3>
-			<UseRef /> */}
-			<button onClick={() => setToggleTimer(!toggleTimer)}>
-				Toggle timer
-			</button>
-			<hr />
-			{toggleTimer && <Timer />}
+			<Context>
+				<Books />
+			</Context>
 		</div>
 	);
 }
